@@ -1,0 +1,244 @@
+html{
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
+}
+body{
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: "League Spartan", sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    background-color:transparent;
+    width: 100%;
+}
+
+/* FONTS CSS */
+
+.gothic-bold {
+  font-family: "League Gothic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.league-spartan {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+.no-li{
+    text-decoration: none !important; 
+    list-style-type: none;
+}
+.extra-large{
+    font-size: 100px;
+}
+
+.large-text{
+    font-size: 70px;
+}
+.orangered{
+    color: orangered;
+}
+
+/* FONTS CSS ENDS HERE */
+
+.bg-img{
+    object-fit:cover; 
+    /* opacity: 0.6; */
+    width: 100vw;
+    height: 100vh;
+}
+.hero-section{
+    margin-top: -50vh;
+    margin-left: 7%;
+    z-index: 5;
+}
+header{
+    height: 100vh;
+    width: 100vw;
+}
+
+.submit-btn{
+    width: 200px;
+    height: 50px;
+    background: transparent;
+    color: white !important;
+    padding: 16px 50px;
+    /* border-radius: 8px 8px 8px 8px; */
+    border: 2px solid white;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 1s ease;
+}
+.submit-btn:hover{
+    background: black;
+    color: white !important;
+    border: 2px solid black;
+}
+.grid-hover-div{
+    height: 45vh;
+}
+#boxing-div{
+    background-image: url("boxing.jpg");
+    object-fit: cover;
+    /* background-position: top; */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+#aerobics-div{
+    background-image: url("aerobics.jpg");
+    object-fit: cover;
+    /* background-position: top; */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+#stepboard-div{
+    background-image: url("stepboard.jpg");
+    object-fit: cover;
+    /* background-position: top; */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+#hiit-div{
+    background-image: url("hiit.jpg");
+    object-fit: cover;
+    /* background-position: top; */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+#taebo-div{
+    background-image: url("taebo.jpg");
+    object-fit: cover;
+    /* background-position: top; */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+#zumba-div{
+    background-image: url("zumba.jpg");
+    object-fit: cover;
+    /* background-position: top; */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+#yoga-div{
+    background-image: url("yoga.jpg");
+    object-fit: cover;
+    /* background-position: top; */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+#fullbody-div{
+    background-image: url("fullbody.jpg");
+    object-fit: cover;
+    /* background-position: top; */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+#random-div{
+    background-image: url("random.jpg");
+    object-fit: cover;
+    /* background-position: top; */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.button-large-transparent{
+    width: 200px;
+    height: 50px;
+    background: transparent;
+    color: white !important;
+    padding: 16px 50px;
+    /* border-radius: 8px 8px 8px 8px; */
+    border: 2px solid white;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 1s ease;
+}
+
+.button-large-orange{
+    width: 200px;
+    height: 50px;
+    /* background: transparent; */
+    background-color: orangered;
+    color: white !important;
+    padding: 16px 50px;
+    /* border-radius: 8px 8px 8px 8px; */
+    border: 2px solid orangered;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 1s ease;
+    /* border: 2px solid orangered; */
+}
+.curved{
+    border-radius: 10px;
+}
+.first-sec{
+    background: rgb(255,68,51);
+background: linear-gradient(90deg, rgba(255,68,51,1) 0%, rgba(255,119,51,1) 40%, rgba(255,146,51,0.7819502801120448) 100%);
+}
+
+.button-large-orange:hover{
+    text-decoration: none;
+    color: orangered !important ;
+    /* transition: 2s; */
+    background-color: transparent;
+    border: 2px solid orangered;
+}
+.contact-section{
+    background-image: url("gym-meditation.jpg");
+    object-fit: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    min-height: 100vh;
+    /* background-position: top; */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-blend-mode: multiply;
+    background-color: rgba(228, 84, 31, 0.685);
+}
+
+.button-mini{
+    background-color: transparent;
+
+}
+.button-large-transparent:hover{
+    text-decoration: none;
+    color: white ;
+    /* transition: 2s; */
+    background-color: orangered;
+    border: 2px solid orangered;
+}
+.white{
+    color: white;
+}
+
+.anchor-block{
+    display: block;
+    color: white;
+    /* font-weight: bold; */
+    font-size: 13px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+.anchor-block:hover{
+    text-decoration: none;
+    color: orangered !important ;
+}
+
+.inputfullname{
+    border-radius: 0px;
+}

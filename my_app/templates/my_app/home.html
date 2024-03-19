@@ -1,0 +1,296 @@
+{% extends 'my_app/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+
+{% block header-content %}
+<header class="bg-dark" style="background-color: red;">
+    <img class="bg-img" src="{% static 'my_app/images/black-man-gym.jpg' %}">
+    <section class="hero-section col-12 col-sm-12 col-md- col-lg-5  ">
+        <h1 class="gothic-bold extra-large" style="font-weight: bolder; color: white; z-index: 20;"> BUILD <span style="color: orangered;">YOURSELF </span>
+            TO THE <span style="color: orangered;">MAXIMUM.</span></h1>
+        <!-- <p class=" white-text mb-4">Build yourself to the maximum.</p> -->
+        <div class="mt-4">
+            <a href="#" class="button-large-transparent ">Get Started </a>
+            <a href="#" class="button-large-orange ml-2">Join Us Now</a>
+        </div>
+        <!-- <p class="mt-4 white-text">Keee<i style="color: white;" class="fas fa-long-arrow-alt-right"></i></p> -->
+    </section>
+</header>
+
+{% endblock header-content %}
+
+{% block main-content %}
+<div class="container-fluid" style="height: 100vh; ">
+    <div class="row h-100 my-auto " style="background-color: black;"  >
+        <div class="col-5 m-auto  p-4" >
+            <h2 class="gothic-bold large-text white " >
+                LOREM IPSUM DOLOR SIT, AMET <span style="color: orangered;">CONSECTETUR</span> ADIPISICING ELIT?
+            </h2>
+
+        </div>
+        <div class="col-5 m-auto  p-4"  style="border-left: 2px solid orangered;">
+                <p class="white" >
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi explicabo labore facere ut dignissimos. Ea deserunt doloremque error perferendis incidunt atque. Quibusdam doloremque enim suscipit labore, cupiditate optio, odit corporis sed obcaecati debitis vitae reiciendis commodi reprehenderit at provident dolore voluptatum unde! Consequatur harum rerum maiores beatae? Praesentium quo in, cum dolores eaque saepe? Eveniet doloribus officiis quae sapiente eos?
+                </p>
+        </div>
+    </div>
+
+</div>
+
+<div class="container-fluid " style="height: 100vh; margin-bottom: 25vh;">
+    <div class="row h-100 my-auto " style=""  >
+        <div class="col-5 m-auto  p-4" >
+            <h2 class="gothic-bold large-text " >
+                LOREM IPSUMSIT, AMET <span style="color: orangered;">CONSECTETUR</span> ADIPISICING 
+            </h2>
+            <img style="object-fit: cover; width: 100%;" src="{% static 'my_app/images/gym-mix.png' %}">
+
+        </div>
+        <div class="col-5 m-auto  p-4" style="border-left: 2px solid orangered;" >
+                <p class="" >
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi explicabo labore facere ut dignissimos. Ea deserunt doloremque error perferendis incidunt atque. Quibusdam doloremque enim suscipit labore, cupiditate optio, odit corporis sed obcaecati debitis vitae reiciendis commodi reprehenderit at provident dolore voluptatum unde! Consequatur harum rerum maiores beatae? Praesentium quo in, cum dolores eaque saepe? Eveniet doloribus officiis quae sapiente eos?
+                </p>
+        </div>
+    </div>
+
+</div>
+
+<div class="container " style="margin-bottom: 140px;">
+    <h1 class="gothic-bold large-text orangered text-center mb-3">PLANS $ PRICINGS</h2>
+    <div class="row">
+        <div class="col-4 mt-4" style="background-color:aliceblue; height: 80vh; padding: 40px 30px;">
+            <h2 class="orangered text-center" style="font-weight: bold;">MONTHLY</h2>
+            <p class="small text-center">10% Discount when you pay online.</p>
+            <h2 class="gothic-bold orangered text-center">N14,000</h2>
+            <ul>
+                <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
+                <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
+                <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
+                <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit.</li>
+                <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
+                <li class="mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
+                <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
+                <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
+                <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
+                <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
+                <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit.</li>
+                <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
+                <li class="mb-2 no-li mb-4"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
+                
+                
+                
+            </ul>  
+            <div class="m-auto text-center">
+            <a class="text-center m-auto mt-4 button-large-orange" href="{% url 'paymonthly' %}">Join Plan</a>
+
+            </div>
+
+        </div>
+
+        <div class="col-4" style="background-color:black; height: 90vh; padding: 40px 30px;">
+            <h2 class="orangered text-center" style="font-weight: bold;">QUARTERLY</h2>
+            <p class="small text-center white">10% Discount when you pay online.</p>
+            <h2 class="gothic-bold orangered text-center">N40,000</h2>
+            <ul>
+                <li class="mt-2 mb-2 no-li white"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
+                <li class="mt-2 mb-2 no-li white"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
+                <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
+                <li class="mt-2 mb-2 no-li white"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit.</li>
+                <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
+                <li class="mt-2 mb-2 no-li white"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
+                <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
+                <li class="mt-2 mb-2 no-li white"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
+                <li class="mt-2 mb-2 no-li white"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
+                <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
+                <li class="mt-2 mb-2 no-li white"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit.</li>
+                <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
+                <li class="mt-2 mb-2 no-li mb-4 white"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
+                
+                
+                
+            </ul>  
+            <div class="m-auto text-center">
+            <a class="text-center m-auto mt-4 button-large-orange" href="#">Join Plan</a>
+
+            </div>
+
+        </div>
+
+        <div class="col-4 mt-4" style="background-color:aliceblue; height: 80vh; padding: 40px 30px;">
+            <h2 class="orangered text-center" style="font-weight: bold;">YEARLY</h2>
+            <p class="small text-center">10% Discount when you pay online.</p>
+            <h2 class="gothic-bold orangered text-center">N80,000</h2>
+            <ul>
+                <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
+                <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
+                <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
+                <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit.</li>
+                <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
+                <li class="mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
+                <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
+                <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
+                <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
+                <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
+                <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit.</li>
+                <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
+                <li class="mb-2 no-li mb-4"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
+                
+                
+                
+            </ul>  
+            <div class="m-auto text-center">
+            <a class="text-center m-auto mt-4 button-large-orange" href="#">Join Plan</a>
+
+            </div>
+
+        </div>
+
+
+        
+    </div>
+
+</div>
+
+<div class="container-fluid">
+    <div class="row " style="margin-bottom: 60px;">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 m-auto">
+            <h1 class="gothic-bold large-text text-center mb-3">OUR <span class="orangered" >CLASSES</span></h2>
+                <p class="m-auto text-center">At Fairford Gym, we offer a diverse range of exercise programs tailored to suit your fitness goals and preferences. Whether you're looking to improve cardiovascular health, build strength, 
+                    or simply have fun while working out, we have something for everyone. Explore our offerings below:</p>  
+
+        </div>
+
+    </div>
+    <div class="row ">
+          
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="boxing-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> Boxing</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Unleash your inner fighter with our boxing classes, where you'll learn proper techniques, improve coordination, and enhance endurance while getting an incredible full-body workout.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="aerobics-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> Aerobics</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Join our high-energy aerobics classes designed to boost cardiovascular efficiency, burn calories, and improve overall fitness levels through dynamic and engaging routines.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="hiit-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> HIIT (High-Intensity Interval Training)</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Experience the power of HIIT workouts, featuring short bursts of intense exercises alternated with brief recovery periods. Maximize calorie burn, increase metabolism, and 
+                    challenge your limits in these efficient and effective sessions.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="stepboard-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> Step Board Workout</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Step up your fitness game with our step aerobics classes, utilizing a raised platform to elevate your heart rate, improve coordination, and sculpt muscles through rhythmic stepping patterns.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="taebo-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> Taebo</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Blend martial arts movements with cardio exercises in our exhilarating Taebo classes, offering a unique fusion of strength training, flexibility, and cardiovascular conditioning.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="zumba-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> Zumba</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Dance your way to fitness with our Zumba classes, combining Latin-inspired dance moves with aerobic elements for a fun and effective full-body workout. Improve endurance, coordination, and mood while grooving to lively rhythms.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="yoga-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> Yoga</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Find balance, flexibility, and inner peace with our yoga classes. Explore various styles, from Vinyasa to Hatha, as you improve strength, focus, and mindfulness through breath-centered movements and relaxation techniques.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="fullbody-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> Full Body Workout</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Experience the ultimate in comprehensive training with our full-body workout sessions. Target multiple muscle groups across the upper body, lower body, and core for a balanced and efficient exercise regimen.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="random-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> Random Session</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusantium quaerat quae quidem id necessitatibus ipsum, ipsam nostrum tenetur voluptates.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+        
+
+    </div>
+
+</div>
+
+<div class="container-fluid contact-section" style="height: 100vh; ">
+    <div class="row h-100 my-auto " style=""  >
+        <div class="col-4 m-auto p-3" style="background-color: orangered;">
+            <div>
+                <form method="POST" class="p-4">
+                    <h3 class="gothic-bold text-capitalize white">Send Us a Message</h3>
+                                {% csrf_token %}
+                              <div class="form-group " id="inputUsername">
+        
+                                {{ contact_form|crispy }}
+                              </div>
+                        {% if messages %}
+                                {% for message in messages %}
+                            <div class="alert alert-{{message.tags }}">
+                                {{ message }}
+                            </div>
+                                {% endfor %}
+                                {% endif %}
+                        <button  class="submit-btn text-capitalize text-center m-auto" type="submit">Login</button>
+                              
+        
+                            </form>
+            </div>
+            
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock main-content %}
+
+
+
