@@ -32,3 +32,6 @@ class Payment(models.Model):
     reference = models.CharField(max_length=100, default='')
     date_created = models.DateTimeField(default=timezone.now)
     expiry_date = models.DateField(default=timezone.now)
+
+    def __str__(self):
+        return "Payment by: {} \n email: {} on {}".format(self.user.full_name, self.user.email, self.date_created)
