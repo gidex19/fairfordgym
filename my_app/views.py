@@ -7,10 +7,15 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from verify_email.email_handler import send_verification_email
 from paystackapi.transaction import Transaction
+from django.urls import reverse_lazy
 from paystackapi.paystack import Paystack
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
+
+from django.contrib.auth.views import PasswordResetView
+from django.contrib.messages.views import SuccessMessageMixin
+
 
 # Create your views here.
 
@@ -21,6 +26,16 @@ from django.utils.html import strip_tags
 paystack_secret_key = "sk_test_3d0074c520b6c9d592d10d5ff4b820887ecb3acd"
 paystack_public_key = "pk_test_6d42b1c09dc2b89577d36411df441587a7fe7a6e" 
 paystack = Paystack(secret_key=paystack_secret_key)
+
+class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
+    template_name = 'my_app/password_reset.html'
+    email_template_name = 'my_app/password_reset_email.html'
+    # subject_template_name = 'my_app/password_reset_subject'
+    success_message = "We've emailed you instructions for setting your password, " \
+                      "if an account exists with the email you entered. You should receive them shortly." \
+                      " If you don't receive an email, " \
+                      "please make sure you've entered the address you registered with, and check your spam folder."
+    success_url = reverse_lazy('home')
 
 def homepage(request):
     if request.method =='POST':

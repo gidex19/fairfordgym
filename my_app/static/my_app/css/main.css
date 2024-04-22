@@ -279,9 +279,18 @@ background: linear-gradient(90deg, orangered 0%, rgba(255,119,51,1) 40%, rgba(25
         height: 200vh !important;
     }
     h2, .large-text{
-        font-size: 45px;
+        font-size: 45px !important; 
     }
     .pricing-card{
         height: 100vh !important;
+    }
+    .button-large-transparent, .button-large-orange{
+        padding: 16px 40px;
+    }
+    h2{
+        font-size: 25px !important;
+    }
+    .contact-container{
+        height: 110vh !important;
     }
 }
