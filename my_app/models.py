@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
 
 plan_type = (('1 Month','1 Month'), ('Quarterly','Quarterly'), ('6 Months','6 Months'), ('Yearly','Yearly'))
+hmo_list = plan_type = (('Prime Insurance','Prime Insurance'), ('XPC Corps','XPC Corps'), ('Axa Mansard','Axa Mansard'), ('Allen HMO','Allen HMO'))
 status_list  = (('Unpaid','Unpaid'), ('Pending','Pending'), ('Paid','Paid'), ('Active','Active'))
 
 # Create your models here.
@@ -18,7 +19,22 @@ class MyCustomuser(AbstractUser):
         return "User: {} \n email: {}".format(self.full_name, self.email)
     
 
+class CorporateMemberRequest(models.Model):
+    full_name = models.CharField(max_length=35, blank=False, null=False)
+    email = models.EmailField(blank=False, null=False)
+    hmo = models.CharField(max_length=100, choices=hmo_list, blank=False)
+    company_name = models.CharField(max_length=100)
+    date_created = models.DateTimeField(default=timezone.now)
+    treated = models.BooleanField(default=False)
 
+    def __str__(self):
+        status = ''
+        if self.treated:
+            status = "COMPELTED"
+        else:
+            status = "UNCOMPLEMENTED"    
+
+        return "{} REQUEST: From {} of [{}] to {}".format(status,  self.full_name, self.company_name, self.hmo)
 
 class Payment(models.Model):
     user = models.ForeignKey(MyCustomuser, on_delete=models.CASCADE)

@@ -1,0 +1,25 @@
+{% extends 'my_app/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block main-content %}
+<div class="container-fluid m-auto first-sec" style="height: 100vh; ">
+<div class="row h-100 my-auto">
+    <div class="col-xs-10 col-sm-10 col-md-6 col-lg-6 m-auto my-auto">
+        <h2 class="gothic-bold large-text text-center white" >
+            VERIFICATION SUCCESSFUL 
+        </h2>
+        <p class="text-center white">Thank you for verifying your email address. You can proceed to login</p>
+        <div class="m-auto text-center">
+
+            <!-- <a href="{% url 'loginpage' %}"  class="submit-btn text-capitalize center text-center m-auto" type="submit">Login</a> -->
+            <a href="{% url 'loginpage' %}"  class="submit-btn text-capitalize center text-center m-auto" type="submit">Login</a>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock main-content %}

@@ -2,6 +2,10 @@ from django import forms
 from django.contrib.auth.hashers import make_password
 from .models import MyCustomuser
 
+
+hmolist = (('Axa Mansard', 'Axa Mansard'), ('Bastion Health', 'Bastion Health'), ('AFC Insurance', 'AFC Insurance'), ('XPS Insurance', 'XPS Insurance'))
+
+
 class ContactForm(forms.Form):
     full_name = forms.CharField(
         widget=forms.TextInput(attrs={
@@ -30,6 +34,34 @@ class LoginForm(forms.Form):
     password = forms.CharField(
         widget=forms.PasswordInput(
             attrs={'placeholder': 'Password', 'class': 'form-control rounded-0 p-3', 'id': 'inputpassword'}),
+        label="")
+
+class CorporateForm(forms.Form):
+    email_address = forms.CharField(
+        widget=forms.EmailInput(
+            attrs={'placeholder': 'Email Address', 'class': 'form-control mb-4 rounded-0 p-3', 'id': 'inputemail'}),
+        label="")
+    full_name = forms.CharField(
+        widget=forms.TextInput(attrs={
+                               'placeholder': 'Full Name', 'class': 'form-control mb-4 rounded-0 p-3', 'id': 'inputfullname'}),
+        label="")
+    hmo = forms.ChoiceField(choices=hmolist, label='')    
+    company_name = forms.CharField(
+        widget=forms.TextInput(attrs={
+                               'placeholder': 'Company Name', 'class': 'form-control mb-4 rounded-0 p-3', 'id': 'inputfullname'}),
+        label="")  
+
+class ResendEmailForm(forms.Form):
+    email = forms.CharField(
+        widget=forms.EmailInput(
+            attrs={'placeholder': 'Email Address', 'class': 'form-control mb-4 rounded-0 p-3', 'id': 'inputemail'}),
+        label="")
+    
+
+class SearchUserForm(forms.Form):
+    email = forms.CharField(
+        widget=forms.EmailInput(
+            attrs={'placeholder': 'Email Address', 'class': 'form-control mb-4 rounded-0 p-3', 'id': 'inputemail'}),
         label="")
     
 

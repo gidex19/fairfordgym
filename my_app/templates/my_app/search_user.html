@@ -1,0 +1,41 @@
+{% extends 'my_app/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block main-content %}
+
+<div class="container top-space-large " style="margin-top: 200px; margin-bottom: 100px;">
+    <div class="row">
+        <div class="col-xs-10 col-sm-10 col-md-6 col-lg-6 light-bg  m-auto " style="background-color: orangered;">
+            <form method="POST" class="p-4">
+                <h3 class="gothic-bold text-capitalize white">Verify User</h3>
+                <!-- <p class="white">Enter user's email address </p> -->
+                            {% csrf_token %}
+                          <div class="form-group " id="inputUsername">
+    
+                            {{ form|crispy }}
+                          </div>
+                    {% if messages %}
+                            {% for message in messages %}
+                        <div class="alert alert-{{message.tags }}">
+                            {{ message }}
+                        </div>
+                            {% endfor %}
+                            {% endif %}
+                    <div class="m-auto">
+
+                        <button  class="submit-btn text-capitalize center text-center m-auto" type="submit">Verify</button>
+                    </div>
+                         
+    
+                        </form>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock main-content %}
