@@ -51,7 +51,11 @@ def loginpage(request):
             email = login_form.cleaned_data.get('email_address')
             password = login_form.cleaned_data.get('password')
             email = email.lower()
+
+            print(email)
+            print(password)
             if Customuser.objects.filter(email=email).exists():
+                print("user exists")
                 custom_user = authenticate(
                     request, username=email, password=password)
                 print(custom_user)
@@ -70,9 +74,10 @@ def loginpage(request):
                     messages.warning(
                         request, 'Incorrect email address or ppassword')
             else:
+                print("Email address not recognised")
                 messages.warning(
                     request, 'Email address not recognised')
-                return redirect('login')
+                return redirect('loginpage')
     else:
         login_form = LoginForm()
     return render(request, 'my_app/login.html', {'login_form': login_form})
@@ -113,6 +118,9 @@ def signup(request):
             phone_number = register_form.cleaned_data.get('phone_number')
             password1 = register_form.cleaned_data.get('password')
             password2 = register_form.cleaned_data.get('password2')
+
+            email = email.lower()
+            full_name = full_name.lower()
 
             print("form details printed out")
             print(full_name)
@@ -178,9 +186,14 @@ def contact(request):
 @login_required()
 def dashboard(request):
     user = request.user
-    context = {'user': user}
+    payments = Payment.objects.filter(user = user, paid = True, status = 'Active' )
+    
+    context = {'user': user, "payments": payments}
     return render(request, 'my_app/dashboard.html', context)
 
+
+def about_us(request):
+    return render(request, 'my_app/about_us.html')
 def send_template_mail(mail_subject, mail_recipient, mail_html, btn_link, mail_header, mail_body, full_name):
     
 
@@ -210,18 +223,18 @@ def send_template_mail(mail_subject, mail_recipient, mail_html, btn_link, mail_h
 
 @login_required()
 def subscribe_monthly(request):
-    amount = '1000000'
+    amount = '19000'
     user = request.user
     full_name = request.user.full_name
     email = request.user.email
     phone = request.user.phone_number
     # paid_status = True
 
-    response = Transaction.initialize(amount=amount, email=email)
+    response = Transaction.initialize(amount=amount + '00', email=email)
 
     ref = response['data']['reference']
     print(full_name)
-    create_pay_instance = Payment.objects.create(user = user, plan_type = '1 Month', amount = amount,  status = 'Paid',
+    create_pay_instance = Payment.objects.create(user = user, plan_type = '1 Month', amount = amount, 
                                                     reference=ref, )
 
     a_url = response['data']['authorization_url']
@@ -261,18 +274,18 @@ def subscribe_monthly(request):
 
 @login_required()
 def subscribe_quarterly(request):
-    amount = '3000000'
+    amount = '45000'
     user = request.user
     full_name = request.user.full_name
     email = request.user.email
     phone = request.user.phone_number
     # paid_status = True
 
-    response = Transaction.initialize(amount=amount, email=email)
+    response = Transaction.initialize(amount=amount + '00', email=email)
 
     ref = response['data']['reference']
     print(full_name)
-    create_pay_instance = Payment.objects.create(user = user, plan_type = 'Quarterly', amount = amount,  status = 'Paid',
+    create_pay_instance = Payment.objects.create(user = user, plan_type = 'Quarterly', amount = amount, 
                                                     reference=ref, )
 
     a_url = response['data']['authorization_url']
@@ -280,18 +293,18 @@ def subscribe_quarterly(request):
 
 @login_required()
 def subscribe_yearly(request):
-    amount = '11000000'
+    amount = '180000'
     user = request.user
     full_name = request.user.full_name
     email = request.user.email
     phone = request.user.phone_number
     # paid_status = True
 
-    response = Transaction.initialize(amount=amount, email=email)
+    response = Transaction.initialize(amount=amount + '00', email=email)
 
     ref = response['data']['reference']
     print(full_name)
-    create_pay_instance = Payment.objects.create(user = user, plan_type = 'Yearly', amount = amount,  status = 'Paid',
+    create_pay_instance = Payment.objects.create(user = user, plan_type = 'Yearly', amount = amount,  
                                                     reference=ref, )
 
     a_url = response['data']['authorization_url']
@@ -311,37 +324,52 @@ def verify_payment(request):
     details = Transaction.verify(reference=paramz)
     status = details['data']['status']
     if status == 'success':
-        if pay_instance.plan_type == '1 Month':
-            expiry_date = pay_instance.date_created + timedelta(days=30)
-            pay_queryobj.update(paid=True, status = 'Active', expiry_date=expiry_date)
-            email = request.user.email
-            
-            current_user.update(subscribed=True, expiry_date=expiry_date)
-            
-            mb = "Your payment to upgrade your fairford Monthly Gym plan was successful\nWelcome on Board. Let's rock n roll"
-            send_template_mail(mail_recipient=email, mail_html="my_app/email_template.html",
-                        btn_link="https://6521-102-90-43-173.ngrok-free.app/", mail_subject="Fairford Payment Plan",
-                          mail_header="Payment Successful", mail_body=mb, full_name= full_name)
+        if pay_instance.used == False:
+            if pay_instance.plan_type == '1 Month':
+                expiry_date = pay_instance.date_created + timedelta(days=32)
+                pay_queryobj.update(paid=True, used = True, status = 'Active', expiry_date=expiry_date)
+                email = request.user.email
+                
+                current_user.update(subscribed=True, expiry_date=expiry_date)
+                
+                mb = "Your payment to upgrade your fairford Monthly Gym plan was successful\nWelcome on Board. Let's rock n roll"
+                send_template_mail(mail_recipient=email, mail_html="my_app/email_template.html",
+                            btn_link="https://6521-102-90-43-173.ngrok-free.app/dashboard", mail_subject="Fairford Payment Plan",
+                            mail_header="Payment Successful", mail_body=mb, full_name= full_name)
 
-            messages.success(request, 'Transaction successful. Your membership status has been updated')
-        elif pay_instance.product_type == 'Quarterly':
-            expiry_date = pay_instance.date_created + timedelta(days=94)
-            pay_queryobj.update(paid=True, status = 'Active', expiry_date=expiry_date)
-            email = request.user.email
-            # current_user = Customuser.objects.filter(email = email)
-            current_user.update(subscribed=True, expiry_date=expiry_date)
-            messages.success(request, 'Transaction successful. Your membership status has been updated')
+                messages.success(request, 'Transaction successful. Your membership status has been updated')
+            elif pay_instance.product_type == 'Quarterly':
+                expiry_date = pay_instance.date_created + timedelta(days=94)
+                pay_queryobj.update(paid=True, used = True, status = 'Active', expiry_date=expiry_date)
+                email = request.user.email
+                # current_user = Customuser.objects.filter(email = email)
+                current_user.update(subscribed=True, expiry_date=expiry_date)
+                mb = "Your payment to upgrade your fairford Quaterly Gym plan (3 Months) was successful\nWelcome on Board. Let's rock n roll"
+                send_template_mail(mail_recipient=email, mail_html="my_app/email_template.html",
+                            btn_link="https://6521-102-90-43-173.ngrok-free.app/dashboard", mail_subject="Fairford Payment Plan",
+                            mail_header="Payment Successful", mail_body=mb, full_name= full_name)
+                messages.success(request, 'Transaction successful. Your membership status has been updated')
 
-        elif pay_instance.product_type == 'Yearly':
-            expiry_date = pay_instance.date_created + timedelta(days=366)
-            pay_queryobj.update(paid=True, status = 'Active', expiry_date=expiry_date)
-            email = request.user.email
-            # current_user = Customuser.objects.filter(email = email)
-            current_user.update(subscribed=True, expiry_date=expiry_date)    
-            messages.success(request, 'Transaction successful. Your membership status has been updated')
+            elif pay_instance.product_type == 'Yearly':
+                expiry_date = pay_instance.date_created + timedelta(days=367)
+                pay_queryobj.update(paid=True, used = True, status = 'Active', expiry_date=expiry_date)
+                email = request.user.email
+                # current_user = Customuser.objects.filter(email = email)
+                current_user.update(subscribed=True, expiry_date=expiry_date)    
+                mb = "Your payment to upgrade your fairford Yearly Gym plan (1 Month) was successful\nWelcome on Board. Let's rock n roll"
+                send_template_mail(mail_recipient=email, mail_html="my_app/email_template.html",
+                            btn_link="https://6521-102-90-43-173.ngrok-free.app/dashboard", mail_subject="Fairford Payment Plan",
+                            mail_header="Payment Successful", mail_body=mb, full_name= full_name)
+                messages.success(request, 'Transaction successful. Your membership status has been updated')
 
+            else:
+                print("incorrect payment plan unavailable")
+                messages.warning(request, "incorrect payment plan\nAn error must have occured")
+                return redirect('home')
         else:
-            print("incorrect payment plan unavailable")
+            print("this payment has been used before....")
+            messages.warning(request, "Sorry, This seems to be a used payment reference ID")
+            return redirect('home')
     else:
         print(' payment not successful')
 

@@ -28,7 +28,7 @@
         </div>
         {% endif %}
         <div class="text-center mt-4" >
-            <a href="#" class="button-large-transparent">Update Password</a>
+            <a href="{% url 'password_reset' %}" class="button-large-transparent">Update Password</a>
         </div>
       </div>
 
@@ -42,9 +42,21 @@
         <h4 class="text-left">
             Payment History
         </h4>
+        {% if payments %}
+            {% for payment in payments %}
+            <div class="alert alert-primary mb-1 mt-1" role="alert">
+             {{payment.plan_type}} Plan || Date: {{ payment.date_created }} Amount: N{{payment.amount}} Expire(d): {{payment.expiry_date}} 
+            </div>    
+            {% endfor %}
+        {% else %}
+        <div class="alert alert-warning" role="alert">
+            No payment has been made
+        </div>
+            
+        {% endif %}
     </div>
 
-    <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8 p-3" style="background-color: lightgray; ">
+    <!-- <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8 p-3" style="background-color: lightgray; ">
         <div class="bg-white p-2 rounded m-1">
             <p class="m-0 p-0">1 Month plan <span class="text-right">N40,000</span></p>
             <small>Paid on Jan 24 | Expires on Feb 24</small>
@@ -54,7 +66,7 @@
 
         
 
-    </div>
+    </div> -->
 
 
        <!-- <div class=" " style="height: 50%; background-color: black; margin-bottom: 10%;">

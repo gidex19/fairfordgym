@@ -1,0 +1,132 @@
+
+{% extends 'my_app/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block main-content %}
+<div class="container-fluid" style="margin-top: 150px; margin-bottom: 100px;">
+    <div class="row m-auto ">
+        <div class="col-xs-11 col-sm-11 col-md-7 col-lg-7 m-auto">
+            <h2 class="gothic-bold large-text text-center" >
+                ABOUT <span style="color: orangered;">FAIRFORD</span> GYM 
+            </h2>
+            <p class="text-center">
+                Our mission is clear - to guide and empower you towards positive, lasting changes for a healthier, happier lifestyle. Whether you're starting fresh or aiming to push your limits, our dedicated team stands by you at every turn.
+            </p>
+            <p class="text-center">
+                With personalised training programs and diverse group classes, we provide the tools and support you need to thrive. But we're not just a gym – we're a tight-knit family, bound by a shared passion for wellness and self-improvement.
+            </p>
+        </div>
+<!-- 
+        <div class="col-xs-11 col-sm-11 col-md-5 col-lg-5">
+            <img style="object-fit: cover; width: 100%;" src="{% static 'my_app/images/gym-mix.png' %}">
+            
+        </div> -->
+
+    </div>
+
+</div>
+
+<div class="container-fluid">
+    <div class="row " style="margin-bottom: 60px;">
+        <div class="col-12 col-sm-12 col-md-7 col-lg-7 m-auto">
+            <h1 class="gothic-bold large-text text-center mb-3">OUR <span class="orangered" >CLASSES</span></h2>
+                <p class="m-auto text-center">At Fairford Gym, we offer a diverse range of exercise programs tailored to suit your fitness goals and preferences. Whether you're looking to improve cardiovascular health, build strength, 
+                    or simply have fun while working out, we have something for everyone. Explore our offerings below:</p>  
+
+        </div>
+
+    </div>
+    <div class="row ">
+          
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="boxing-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> Boxing</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Unleash your inner fighter with our boxing classes, where you'll learn proper techniques, improve coordination, and enhance endurance while getting an incredible full-body workout.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="aerobics-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> Aerobics</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Join our high-energy aerobics classes designed to boost cardiovascular efficiency, burn calories, and improve overall fitness levels through dynamic and engaging routines.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="hiit-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> HIIT (High-Intensity Interval Training)</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Experience the power of HIIT workouts, featuring short bursts of intense exercises alternated with brief recovery periods. Maximize calorie burn, increase metabolism, and 
+                    challenge your limits in these efficient and effective sessions.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="stepboard-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> Step Board Workout</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Step up your fitness game with our step aerobics classes, utilizing a raised platform to elevate your heart rate, improve coordination, and sculpt muscles through rhythmic stepping patterns.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="taebo-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> Taebo</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Blend martial arts movements with cardio exercises in our exhilarating Taebo classes, offering a unique fusion of strength training, flexibility, and cardiovascular conditioning.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="zumba-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> Zumba</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Dance your way to fitness with our Zumba classes, combining Latin-inspired dance moves with aerobic elements for a fun and effective full-body workout. Improve endurance, coordination, and mood while grooving to lively rhythms.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="yoga-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> Yoga</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Find balance, flexibility, and inner peace with our yoga classes. Explore various styles, from Vinyasa to Hatha, as you improve strength, focus, and mindfulness through breath-centered movements and relaxation techniques.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="fullbody-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> Full Body Workout</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Experience the ultimate in comprehensive training with our full-body workout sessions. Target multiple muscle groups across the upper body, lower body, and core for a balanced and efficient exercise regimen.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 p-4 bg-dark grid-hover-div" id="random-div" >
+            <div>
+                <h5 class="text-white"><span><i class="fas fa-cube"></i></span> Random Session</h5>
+                <hr style="size: 30%; color: white !important; width: 25%; border: 3px solid white;">
+                <p class="white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam accusantium quaerat quae quidem id necessitatibus ipsum, ipsam nostrum tenetur voluptates.</p>
+                
+                <!-- <a href="#" class="default-btn small-btn circle"><span><i class="fas fa-cube"></i></span> Start Project</a> -->
+            </div>
+        </div>
+        
+
+    </div>
+
+</div>
+
+{% endblock main-content %}
+

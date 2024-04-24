@@ -293,4 +293,7 @@ background: linear-gradient(90deg, orangered 0%, rgba(255,119,51,1) 40%, rgba(25
     .contact-container{
         height: 110vh !important;
     }
+    .navbar-nav{
+        margin-top: 60px;
+    }
 }

@@ -6,6 +6,8 @@ plan_type = (('1 Month','1 Month'), ('Quarterly','Quarterly'), ('6 Months','6 Mo
 hmo_list = plan_type = (('Prime Insurance','Prime Insurance'), ('XPC Corps','XPC Corps'), ('Axa Mansard','Axa Mansard'), ('Allen HMO','Allen HMO'))
 status_list  = (('Unpaid','Unpaid'), ('Pending','Pending'), ('Paid','Paid'), ('Active','Active'))
 
+
+
 # Create your models here.
 class MyCustomuser(AbstractUser):
     full_name = models.CharField(max_length=35, blank=True)
@@ -48,6 +50,7 @@ class Payment(models.Model):
     reference = models.CharField(max_length=100, default='')
     date_created = models.DateTimeField(default=timezone.now)
     expiry_date = models.DateField(default=timezone.now)
+    used = models.BooleanField(default=False)
 
     def __str__(self):
         return "Payment by: {} \n email: {} on {}".format(self.user.full_name, self.user.email, self.date_created)
