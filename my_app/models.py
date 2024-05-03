@@ -54,3 +54,12 @@ class Payment(models.Model):
 
     def __str__(self):
         return "Payment by: {} \n email: {} on {}".format(self.user.full_name, self.user.email, self.date_created)
+    
+class ContactMessage(models.Model):
+    full_name = models.CharField(max_length=35, blank=False, null=False)
+    email = models.EmailField(blank=False, null=False)
+    message = models.TextField()
+    date_created = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return "{}: Message from {} | {}".format(self.date_created, self.full_name, self.email)

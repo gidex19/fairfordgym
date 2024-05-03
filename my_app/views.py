@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import ContactForm, LoginForm, RegisterForm, CorporateForm, ResendEmailForm, SearchUserForm
-from .models import MyCustomuser as Customuser, Payment, CorporateMemberRequest
+from .models import MyCustomuser as Customuser, Payment, CorporateMemberRequest, ContactMessage
 from django.contrib.auth import authenticate, login, logout
 from datetime import datetime, timedelta
 from django.contrib.auth.decorators import login_required
@@ -40,6 +40,13 @@ class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
 def homepage(request):
     if request.method =='POST':
         contact_form = ContactForm(request.POST)
+        if contact_form.is_valid():
+            email = contact_form.cleaned_data.get('email_address')
+            full_name = contact_form.cleaned_data.get('full_name')
+            message = contact_form.cleaned_data.get('message')
+            ContactMessage.objects.create(full_name = full_name, email = email, message = message)
+            messages.success(request, "Message Sent Successfully!!!")
+            
     else:
         contact_form = ContactForm()
     return render(request, 'my_app/home.html', {'contact_form': contact_form})
@@ -194,6 +201,8 @@ def dashboard(request):
 
 def about_us(request):
     return render(request, 'my_app/about_us.html')
+
+
 def send_template_mail(mail_subject, mail_recipient, mail_html, btn_link, mail_header, mail_body, full_name):
     
 
