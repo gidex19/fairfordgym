@@ -5,33 +5,220 @@
 
 
 {% block header-content %}
-<header class="bg-dark" style="background-color: red;">
-    <img class="bg-img" src="{% static 'my_app/images/black-man-gym.jpg' %}">
-    <section class="hero-section col-12 col-sm-12 col-md-5 col-lg-5  mx-md-0 mx-lg-0 mx-sm-auto ">
-        {% if messages %}
-        {% for message in messages %}
-    <div class="alert alert-{{message.tags }}">
-        {{ message }}
-    </div>
-        {% endfor %}
-        {% endif %}
-        <h1 class="gothic-bold extra-large" style="font-weight: bolder; color: white; z-index: 20;"> BUILD <span style="color: orangered;">YOURSELF </span>
-            TO THE <span style="color: orangered;">MAXIMUM.</span></h1>
-        <!-- <p class=" white-text mb-4">Build yourself to the maximum.</p> -->
-        <div class="mt-4 ">
-            <a href="#pricing" class="button-large-transparent ">Get Started </a>
-            <a href="{% url 'signup' %}" class="button-large-orange ml-2">Join Us Now</a>
-        </div>
-        <!-- <p class="mt-4 white-text">Keee<i style="color: white;" class="fas fa-long-arrow-alt-right"></i></p> -->
-    </section>
+<header>
+    <!-- <nav>
+        <a href="">Home</a>
+        <a href="">Contacts</a>
+        <a href="">Info</a>
+    </nav> -->
 </header>
+
+ <!-- carousel -->
+ <div class="carousel">
+    <!-- list item -->
+    <div class="list">
+        <div class="item">
+            <img src="{% static 'my_app/images/img1.jpg' %}">
+            <div class="content">
+                <div class="author">FAIRFORD GYM</div>
+                <div class="title">FITNESS AT IT'S</div>
+                <div class="topic">BEST</div>
+                <div class="des">
+                    <!-- lorem 50 -->
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde. 
+                </div>
+                <!-- <div class="buttons">
+                    <button onclick="location.href='https://www.google.com' " type="button">SEE MORE</button>
+                    <button>SUBSCRIBE</button>
+                </div> -->
+                <div class="buttons">
+                    <a href="#plans-and-pricing" class="">SUBSCRIBE</a>
+                    <!-- <a href="#" class="">SEE MORE</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="{% static 'my_app/images/img2.jpg' %}">
+            <div class="content">
+                <div class="author">FAIRFORD GYM</div>
+                <div class="title">EXPERIENCE</div>
+                <div class="topic">PREMIUM</div>
+                <div class="des">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde. 
+                </div>
+                <!-- <div class="buttons">
+                    <button onclick="location.href='https://www.google.com' " type="button" >SEE MORE</button>
+                    <button>SUBSCRIBE</button>
+                </div> -->
+                <div class="buttons">
+                    <a href="#plans-and-pricing" class="">SUBSCRIBE</a>
+                    <!-- <a href="#" class="">SEE MORE</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="{% static 'my_app/images/img3.jpg' %}">
+            <div class="content">
+                <div class="author">FAIRFORD GYM</div>
+                <div class="title">BEST FINTNESS</div>
+                <div class="topic">INSTRUCTORS</div>
+                <div class="des">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde. 
+                </div>
+                <!-- <div class="buttons">
+                    <button onclick="location.href='https://www.google.com' " type="button" >SEE MORE</button>
+                    <button>SUBSCRIBE</button>
+                </div> -->
+                <div class="buttons">
+                    <a href="#plans-and-pricing" class="">SUBSCRIBE</a>
+                    <!-- <a href="#" class="">SEE MORE</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="{% static 'my_app/images/img4.jpg' %}">
+            <div class="content">
+                <div class="author">FAIRFORD GYM</div>
+                <div class="title">BEST GYM</div>
+                <div class="topic">INFRASTRUCTURE</div>
+                <div class="des">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde. 
+                </div>
+                <!-- <div class="buttons">
+                    <button onclick="location.href='https://www.google.com' " type="button" >SEE MORE</button>
+                    <button>SUBSCRIBE</button>
+                </div> -->
+                <div class="buttons">
+                    <a href="#plans-and-pricing" class="">SUBSCRIBE</a>
+                    <!-- <a href="#" class="">SEE MORE</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- list thumnail -->
+    <div class="thumbnail">
+        <div class="item">
+            <img src="{% static 'my_app/images/img1.jpg' %}">
+            <div class="content">
+                <div class="title">
+                    Name Slider
+                </div>
+                <div class="description">
+                    Description
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="{% static 'my_app/images/img2.jpg' %}">
+            <div class="content">
+                <div class="title">
+                    Name Slider
+                </div>
+                <div class="description">
+                    Description
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="{% static 'my_app/images/img3.jpg' %}">
+            <div class="content">
+                <div class="title">
+                    Name Slider
+                </div>
+                <div class="description">
+                    Description
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="{% static 'my_app/images/img4.jpg' %}">
+            <div class="content">
+                <div class="title">
+                    Name Slider
+                </div>
+                <div class="description">
+                    Description
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- next prev -->
+
+    <div class="arrows">
+        <button id="prev"><</button>
+        <button id="next">></button>
+    </div>
+    <!-- time running -->
+    <div class="time mt-3"></div>
+</div>
 
 {% endblock header-content %}
 
 {% block main-content %}
+<div class="container pb-4  text-center m-auto"  >
+    <div class="row pt-3 pb-3" style="margin-top: 70px;" >
+        <!-- <div class="col-12 m-auto " data-aos="fade-up" >
+            <div class="text-box" style="margin-top: 100px; margin-bottom: 50px; ">
+                <div class="fixed-text">Experience</div>
+                <div class="animate-text">
+                    <div>
+                        <span>First Class Fitness</span>
+                        <span>World Class Gym</span>
+                        <span>Premium</span>
+                    </div>	
+                </div>
+            </div>
+
+        </div> -->
+        <div class="col-12 m-auto "  data-aos="fade-up">
+            <h2 class="gothic-bold large-text  " >
+                GET YOUR <span style="color: orangered;">DREAM</span> BODY 
+            </h2>
+        </div>
+    
+    </div>
+    <div class=" row pb-4 mb-4 m-auto text-center">
+        
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 m-auto text-center" data-aos="fade-up" data-aos-duration="4000">
+            <div class="ui-card">
+                <img src="{% static 'my_app/images/hover-img1.jpg' %}" >
+                <div class="description">
+                    <h3>POSITIVITY</h3>
+                    <p>We seek only to encourage, empower and inspire you to test your limit</p>
+                    <a  href="#">Read More</a>
+                </div>
+            </div>
+          </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 m-auto" data-aos="fade-up" data-aos-duration="3000">
+                <div class="ui-card">
+                    <img src="{% static 'my_app/images/hover-img2.jpg' %}">
+                    <div class="description">
+                        <h3>INCLUSIVITY</h3>
+                        <p>Here we keep open minds. There is no one type or way in our diverse community. Come as you are!</p>
+                        <a class = "mini-orange-btn" href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 m-auto" data-aos="fade-up" data-aos-duration="2000">
+                <div class="ui-card">
+                    <img src="{% static 'my_app/images/hover-img3.jpg' %}">
+                    <div class="description">
+                        <h3>FUN</h3>
+                        <p>We know serious fitness is hard, but that doesn’t mean it can’t be an edge-of-your-seat, can’t-get-enough, look-forward-to-your-workouts party.</p>
+                        <a class = "mini-orange-btn" href="#">Read More</a>
+                    </div>
+                </div>
+    
+
+            </div>
+        
+
+    </div>
+
+</div>
 <div class="container-fluid what-we-do-container " >
     <div class=" what-we-do-row row  h-100  my-auto " style="background-color: black;"  >
-        <div class=" col-11 col-sm-11 col-md-5 col-lg-5  m-auto  p-4" >
+        <div class=" col-11 col-sm-11 col-md-5 col-lg-5  m-auto  p-4" data-aos="zoom-out-right" >
             <h2 class="gothic-bold large-text white " >
                 WHAT WE DO <span style="color: orangered;">BEST</span> 
             </h2>
@@ -43,7 +230,7 @@
 
 
         </div>
-        <div class="col-11 col-sm-11 col-md-5 col-lg-5  m-auto  p-4"  style="border-left: 2px solid orangered;">
+        <div class="col-11 col-sm-11 col-md-5 col-lg-5  m-auto  p-4"  style="border-left: 2px solid orangered;" data-aos="zoom-out-left">
                 <p class="white" >
                     At Fairford Gym, our mission is simple: to provide a welcoming space where everyone can achieve their fitness goals and embrace a healthy lifestyle. Setting ourselves apart with a holistic approach to fitness, we consider the bigger picture and integrate the finest elements from various fitness facilities. We aim to redefine the standards of a state-of-the-art Fitness Studio. Recognizing that taking the first step can be daunting, 
                     we ensure that every other aspect is seamlessly handled by us. Come visit us and experience it firsthand.
@@ -54,15 +241,15 @@
 </div>
 
 <div class="container-fluid " style="height: 100vh; margin-bottom: 25vh; margin-top: 50px;">
-    <div class="row h-100 my-auto " style=""  >
-        <div class="col-11 col-sm-11 col-md-5 col-lg-5  m-auto  p-4" >
+    <div class="row h-100 my-auto "   >
+        <div class="col-11 col-sm-11 col-md-5 col-lg-5  m-auto  p-4" data-aos="fade-up"  >
             <h2 class="gothic-bold large-text " >
                 OUR <span style="color: orangered;">UNIQUE</span> FEATURES 
             </h2>
-            <img style="object-fit: cover; width: 100%;" src="{% static 'my_app/images/fairford-setting.jpg' %}">
+            <img style="object-fit: cover; width: 100%; border-radius: 20px;" src="{% static 'my_app/images/fairford-settingz.jpg' %}">
 
         </div>
-        <div class="col-11 col-sm-11 col-md-5 col-lg-5  m-auto  p-4" style="border-left: 2px solid orangered;" >
+        <div class="col-11 col-sm-11 col-md-5 col-lg-5  m-auto  p-4" style="border-left: 2px solid orangered;" data-aos="fade-up" >
                 <ul>
                     <li>Advanced fitness equipment and sophisticated training programs. </li>
                     <li>Professional team dedicated to helping members reach their fitness goals.</li>
@@ -76,10 +263,13 @@
 </div>
 
 
-<div class="container " style="margin-bottom: 140px;">
+<div class="container " id="plans-and-pricing" style="margin-bottom: 140px;">
     <h1 class="gothic-bold large-text orangered text-center mb-3" id="pricing">PLANS $ PRICINGS</h2>
     <div class="row">
-        <div class="pricing-card col-11 col-sm-11 col-md-4 col-lg-4  mb-3 m-auto " style="background-color:aliceblue; height: 80vh; padding: 40px 30px;">
+        <div class="pricing-card col-11 col-sm-11 col-md-4 col-lg-4  mb-3 m-auto " style="background-color:aliceblue; height: 60vh; padding: 40px 30px;" 
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1500">
             <h2 class="orangered text-center" style="font-weight: bold;">MONTHLY</h2>
             <p class="small text-center">10% Discount when you pay online.</p>
             <h2 class="gothic-bold orangered text-center">N19,000</h2>
@@ -89,26 +279,29 @@
                 <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> All day access</li>
                 <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
                 <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Free classes</li>
-                <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
-                <li class="mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
-                <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
-                <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <!-- <hr class="m-auto mb-3" style="color: darkgray; height: 1px; width: 90%;"> -->
+                <!-- <li class="mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
+                <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;"> -->
+                <!-- <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
                 <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
                 <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
                 <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
                 <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit.</li>
                 <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
                 <li class="mb-2 no-li mb-4"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
-                
+                 -->
             </ul>  
-            <div class="m-auto text-center">
+            <div class="m-auto text-center mt-3">
             <a class="text-center m-auto mt-4 button-large-orange" href="{% url 'paymonthly' %}">Join Plan</a>
 
             </div>
 
         </div>
 
-        <div class="pricing-card col-11 col-sm-11 col-md-4 col-lg-4 mb-3 m-auto " style="background-color:black; height: 90vh; padding: 40px 30px;">
+        <div class="pricing-card col-11 col-sm-11 col-md-4 col-lg-4 mb-3 m-auto " style="background-color:black; height: 70vh; padding: 40px 30px;"
+        data-aos="fade-up"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
             <h2 class="orangered text-center" style="font-weight: bold;">QUARTERLY</h2>
             <p class="small text-center white">10% Discount when you pay online.</p>
             <h2 class="gothic-bold orangered text-center">N45,000</h2>
@@ -120,37 +313,41 @@
                 <li class="mt-2 mb-2 no-li white"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Free classes</li>
                 <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
                 <li class="mt-2 mb-2 no-li white"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Free fairford Gym Merch</li>
-                <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
-                <li class="mt-2 mb-2 no-li white"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <!-- <hr class="m-auto mb-3" style="color: darkgray; height: 1px; width: 90%;"> -->
+                <!-- <li class="mt-2 mb-2 no-li white"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
                 <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
                 <li class="mt-2 mb-2 no-li white"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
                 <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
                 <li class="mt-2 mb-2 no-li white"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit.</li>
                 <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
                 <li class="mt-2 mb-2 no-li mb-4 white"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
-                
+                 -->
                 
                 
             </ul>  
-            <div class="m-auto text-center">
+            <div class="m-auto text-center mt-3">
             <a class="text-center m-auto mt-4 button-large-orange" href="{% url 'payquarterly' %}">Join Plan</a>
 
             </div>
 
         </div>
 
-        <div class="pricing-card col-11 col-sm-11 col-md-4 col-lg-4  mb-3 m-auto " style="background-color:aliceblue; height: 80vh; padding: 40px 30px;">
+        <div class="pricing-card col-11 col-sm-11 col-md-4 col-lg-4  mb-3 m-auto " style="background-color:aliceblue; height: 60vh; padding: 40px 30px;"
+        data-aos="fade-up"
+     data-aos-easing="linear"
+     data-aos-duration="1500"
+        >
             <h2 class="orangered text-center" style="font-weight: bold;">YEARLY</h2>
             <p class="small text-center">10% Discount when you pay online.</p>
             <h2 class="gothic-bold orangered text-center">N180,000</h2>
-            <ul>
+            <ul >
                 <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> All day access</li>
                 <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
                 <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Free classes</li>
                 <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
                 <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Free fairford Gym Merch</li>
-                <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
-                <li class="mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
+                <!-- <hr class="m-auto mb-3" style="color: darkgray; height: 1px; width: 90%;"> -->
+                <!-- <li class="mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
                 <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
                 <li class="mt-2 mb-2 no-li"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
                 <hr class="m-auto" style="color: darkgray; height: 0.5px; width: 90%;">
@@ -160,10 +357,10 @@
                 <hr class="m-auto" style="color: darkgray; height: 1px; width: 90%;">
                 <li class="mb-2 no-li mb-4"><i class="fa fa-check-circle mr-1" aria-hidden="true"></i> Lorem ipsum dolor sit amet consectetur.</li>
                 
-                
+                 -->
                 
             </ul>  
-            <div class="m-auto text-center">
+            <div class="m-auto text-center mt-3">
             <a class="text-center m-auto mt-4 button-large-orange" href="{% url 'payyearly' %}">Join Plan</a>
 
             </div>
@@ -211,10 +408,23 @@
 {% endblock main-content %}
 
 
+
 {% block js %}
+    <script>
+
+        $(document).ready(function () {
+
+            AOS.init({
+            duration: 700
+            });
+
+
+        });
+    </script>
 
 <script src="{% static 'my_app/js/main.js' %}" ></script>
 {% endblock js %}
+
 
 
 

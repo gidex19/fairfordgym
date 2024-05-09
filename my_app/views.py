@@ -203,10 +203,9 @@ def about_us(request):
     return render(request, 'my_app/about_us.html')
 
 
+
 def send_template_mail(mail_subject, mail_recipient, mail_html, btn_link, mail_header, mail_body, full_name):
     
-
-    # button_link = "https://6521-102-90-43-173.ngrok-free.app"
 
     context = {
         "full_name": full_name,
@@ -256,7 +255,7 @@ def subscribe_monthly(request):
     # my_subject = "Fairford Gym Subscription Renewal"
     # my_recipient = email
 
-    # button_link = "https://6521-102-90-43-173.ngrok-free.app"
+    
 
     # context = {
     #     "full_name": full_name,
@@ -343,7 +342,7 @@ def verify_payment(request):
                 
                 mb = "Your payment to upgrade your fairford Monthly Gym plan was successful\nWelcome on Board. Let's rock n roll"
                 send_template_mail(mail_recipient=email, mail_html="my_app/email_template.html",
-                            btn_link="https://6521-102-90-43-173.ngrok-free.app/dashboard", mail_subject="Fairford Payment Plan",
+                            btn_link="https://www.fairfordgym.com/dashboard", mail_subject="Fairford Payment Plan",
                             mail_header="Payment Successful", mail_body=mb, full_name= full_name)
 
                 messages.success(request, 'Transaction successful. Your membership status has been updated')
@@ -355,7 +354,7 @@ def verify_payment(request):
                 current_user.update(subscribed=True, expiry_date=expiry_date)
                 mb = "Your payment to upgrade your fairford Quaterly Gym plan (3 Months) was successful\nWelcome on Board. Let's rock n roll"
                 send_template_mail(mail_recipient=email, mail_html="my_app/email_template.html",
-                            btn_link="https://6521-102-90-43-173.ngrok-free.app/dashboard", mail_subject="Fairford Payment Plan",
+                            btn_link="https://www.fairfordgym.com/dashboard", mail_subject="Fairford Payment Plan",
                             mail_header="Payment Successful", mail_body=mb, full_name= full_name)
                 messages.success(request, 'Transaction successful. Your membership status has been updated')
 
@@ -367,7 +366,7 @@ def verify_payment(request):
                 current_user.update(subscribed=True, expiry_date=expiry_date)    
                 mb = "Your payment to upgrade your fairford Yearly Gym plan (1 Month) was successful\nWelcome on Board. Let's rock n roll"
                 send_template_mail(mail_recipient=email, mail_html="my_app/email_template.html",
-                            btn_link="https://6521-102-90-43-173.ngrok-free.app/dashboard", mail_subject="Fairford Payment Plan",
+                            btn_link="https://www.fairfordgym.com/dashboard", mail_subject="Fairford Payment Plan",
                             mail_header="Payment Successful", mail_body=mb, full_name= full_name)
                 messages.success(request, 'Transaction successful. Your membership status has been updated')
 

@@ -13,12 +13,15 @@ django-crispy-forms==2.1
 django-js-asset==2.2.0
 django-social-share==2.3.0
 Django-Verify-Email==2.0.3
+emoji==2.11.1
 idna==3.6
+paystack==1.5.0
 paystackapi==2.1.1
 pillow==10.2.0
 pycares==4.4.0
 pycparser==2.21
 requests==2.31.0
+simplejson==3.19.2
 sqlparse==0.4.4
 tzdata==2024.1
 urllib3==2.2.1
