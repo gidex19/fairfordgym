@@ -9,6 +9,7 @@ urlpatterns = [
     path('signup/', my_app_view.signup, name='signup'),
     path('contact/', my_app_view.contact, name='contact'),
     path('about-us/', my_app_view.about_us, name='about_us'),
+    path('privacy-policy/', my_app_view.privacy_policy, name='privacy_policy'),
     path('verification/', include('verify_email.urls')),
     path('subscribemonthly/', my_app_view.subscribe_monthly, name = 'paymonthly'),
     path('subscribequarterly/', my_app_view.subscribe_quarterly, name = 'payquarterly'),

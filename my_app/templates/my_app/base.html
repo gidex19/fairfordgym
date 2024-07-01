@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fairford Gym || Home </title>
+    <title>Fairford Gym  </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -36,7 +36,8 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -55,9 +56,9 @@
                         <div class="navbar-nav">
                             <a href="{% url 'home' %}" class="nav-item nav-link active bold-anchor mr-2">Home</a>
                             <!-- <a href="#" class="nav-item nav-link bold-anchor mr-2 ">About</a> -->
+                            <a href="{% url 'about_us' %}" class="nav-item nav-link bold-anchor mr-2">About Us</a>
                             <a href="{% url 'corporate' %}" class="nav-item nav-link bold-anchor mr-2">Corporate Plan</a>
                             <a href="{% url 'contact' %}" class="nav-item nav-link bold-anchor mr-2">Contact</a>
-                            <a href="{% url 'about_us' %}" class="nav-item nav-link bold-anchor mr-2">About Us</a>
                             {% if user.is_authenticated  %}
                             <a href="{% url 'dashboard' %}" class="nav-item nav-link bold-anchor mr-2">Profile</a>
                             <a href="{% url 'logout' %}" class="nav-item nav-link bold-anchor mr-2">Logout</a>
@@ -106,7 +107,7 @@
                     <a class="mr-3" style="color: white;" target="_blank" href="#" class="text-center m-auto "><i class="fab fa-tiktok fa-2x"></i></a>
                     
                     <p class="white mt-4">
-                        <span><i class="fas fa-phone-alt"></i></span> +234 8124 482 256
+                        <span><i class="fas fa-phone-alt"></i></span> +234 9135920347
                     </p>
                     
                 </div>
@@ -115,9 +116,9 @@
                 <div class="m-auto" style="padding: 40px 2px;">
                     <p class="footer-header-p orangered" style="font-size: 14px; font-weight: bold;">Navigation</p>
                     <a class="mr-3 anchor-block" style="color: white;"  href="{% url 'home' %}" class="text-center m-auto ">Home</a>
+                    <a class="mr-3 anchor-block" style="color: white;" href="{% url 'about_us' %}" class="text-center m-auto ">About Us</a>
                     <a class="mr-3 anchor-block" style="color: white;" href="{% url 'corporate' %}" class="text-center m-auto ">Corporate Plan</a>
                     <a class="mr-3 anchor-block" style="color: white;" href="{% url 'contact' %}" class="text-center m-auto ">Contact</a>
-                    <a class="mr-3 anchor-block" style="color: white;" href="{% url 'about_us' %}" class="text-center m-auto ">About Us</a>
                     {% if user.is_authenticated  %}
                             <a class="mr-3 anchor-block" style="color: white;" href="{% url 'dashboard' %}" class="text-center m-auto ">Profile</a>
                             <a class="mr-3 anchor-block" style="color: white;" href="{% url 'logout' %}" class="text-center m-auto ">Logout</a>
@@ -126,7 +127,7 @@
                             <a class="mr-3 anchor-block" style="color: white;" href="{% url 'signup' %}" class="text-center m-auto ">Sign Up</a>
                     {% endif %}
                     <!-- <a class="mr-3 anchor-block" style="color: white;" href="#" class="text-center m-auto ">ABOUT</a> -->
-                    
+                    <a class="mr-3 anchor-block" style="color: white;" href="{% url 'privacy_policy' %}" class="text-center m-auto ">Privacy Policy</a>
                 
                 </div>
 
@@ -134,10 +135,14 @@
             </div>
             <div class="col-12 col-sm-6 col-md-3 col-lg-3 mx-auto" >
                 <div class="m-auto" style="padding: 40px 2px;">
-                    <p class="footer-header-p orangered" style= "font-size: 14px; font-weight: bold;">Mission</p>
+                    <!-- <p class="footer-header-p orangered" style= "font-size: 14px; font-weight: bold;">Mission</p>
                     <p class="white">
                         Our mission is clear - to guide and empower you towards positive, lasting changes for a healthier, happier lifestyle. Whether you're starting fresh or aiming to push your limits, our dedicated team stands by you at every turn.
-                    </p> 
+                    </p>  -->
+                    <p class="footer-header-p orangered" style= "font-size: 14px; font-weight: bold;">Time Table</p>
+                    <p class="white">MON - SAT (7AM-8PM)</p>
+                    <p class="white">SUN - CLOSED</p>    
+                    
                 </div>
 
             </div>

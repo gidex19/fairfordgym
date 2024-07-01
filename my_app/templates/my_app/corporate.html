@@ -6,14 +6,18 @@
 {% block main-content %}
 <div class="container-fluid" style="margin-top: 150px; margin-bottom: 100px;">
     <div class="row m-auto ">
-        <div class="col-xs-11 col-sm-11 col-md-5 col-lg-5" data-aos="zoom-out-right">
+        <div class="col-xs-11 col-sm-11 col-md-5 col-lg-5 m-auto" data-aos="zoom-out-right">
             <h2 class="gothic-bold large-text " >
                 CORPORATE & <span style="color: orangered;">WELLNESS</span> HUB 
             </h2>
-            <p>Fairford Gym is committed to enhancing workplace well-being through tailored wellness solutions. From boosting employee engagement and morale to reducing healthcare costs and enhancing company reputation, our programs empower your team to thrive. Partner with us to cultivate a healthier, happier, and more productive workforce.</p>
+            <p>
+                Fairford Gym understands that healthy employees are productive employees. A happy and healthy workforce translates to increased morale, reduced absenteeism, and a boost in overall company performance.</p>
+            <p>
+                That's why we offer comprehensive corporate wellness solutions designed to empower your team to reach their full potential.
+            </p>    
         </div>
 
-        <div class="col-xs-11 col-sm-11 col-md-5 col-lg-5" data-aos="zoom-out-left">
+        <div class="col-xs-11 col-sm-11 col-md-5 col-lg-5 m-auto" data-aos="zoom-out-left">
             <img style="object-fit: cover; width: 100%; border-radius: 20px;" src="{% static 'my_app/images/blackshade-fairford.jpg' %}">
             
         </div>
@@ -23,6 +27,50 @@
 </div>
 
 <div class="container mb-4">
+    <div class="row m-auto">
+        <h2 class="gothic-bold large-text text-center" data-aos="fade-up" >
+            HERE'S HOW WE CAN<span style="color: orangered;"> HELP</span> 
+        </h2>
+        <div class="col-xs-11 col-sm-11 col-md-6 col-lg-6 m-auto" data-aos="fade-up">
+
+            <ul style="list-style-type: none;" class="text-center">
+                <img class="m-auto text-center" style="object-fit: cover; width: 60px; height: 60px; " src="{% static 'my_app/images/gym_record.png' %}">
+                
+                <li style="color: orangered;" class="text-center"> On site Fitness Programs </li>
+                <p class="m-0  text-center" >Motivate your team with convenient, on-site fitness classes and workshops delivered by our certified trainers. We offer a variety of programs to suit all fitness levels and interests, from high-energy workouts to stress-relieving yoga sessions.
+                </p>
+
+                <div style="margin-top: 40px;">
+
+                </div>
+
+                <img class="m-auto text-center" style="object-fit: cover; width: 60px; height: 60px; " src="{% static 'my_app/images/teamwork.png' %}">
+                
+                <li class="mt-2 text-center"   style="color: green;"> Team Building through Fitness</li>
+                <p class="m-0 text-center" >Encourage team bonding and collaboration through our fun and engaging fitness challenges and events. These activities promote a sense of community and camaraderie, leading to a more positive and productive work environment.
+                </p>
+                <div style="margin-top: 40px;">
+
+                </div>
+                <img class="m-auto text-center" style="object-fit: cover; width: 60px; height: 60px; " src="{% static 'my_app/images/discount.png' %}">
+                
+                <li class="mt-2 text-center" style="color: blue;"> Discounted Gym Memberships</li>
+                <p class="m-0 text-center" >Provide your team with access to our state-of-the-art facility and diverse fitness programs at preferential rates. This encourages further healthy habits outside of work and fosters a culture of well-being within your company.
+                </p>
+               <p class="m-0 text-center">
+                Investing in your team's health is an investment in your company's success. Contact Fairford Gym today and let us help you build a thriving and healthy workforce!
+               </p> 
+               
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="container mb-4 mt-4">
     <div class="row m-auto">
         <h2 class="gothic-bold large-text text-center" data-aos="fade-up" >
             JOIN US<span style="color: orangered;"> TODAY</span> 
@@ -61,6 +109,9 @@
     </div>
 
 </div>
+
+
+
 
 {% endblock main-content %}
 

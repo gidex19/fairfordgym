@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'verify_email.apps.VerifyEmailConfig',
     'crispy_bootstrap4',
-   
+    'django.contrib.humanize',
+    "bootstrap_datepicker_plus",
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -143,9 +144,9 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, "templates")]
 # DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_URL = 'static/'
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 # extra section starts here
@@ -176,8 +177,14 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
+HTML_MESSAGE_TEMPLATE = "my_app/verify_account_email.html"
+VERIFICATION_SUCCESS_TEMPLATE = "my_app/email_verification_success.html"
+VERIFICATION_FAILED_TEMPLATE = "my_app/email_verification_failed.html"
+LINK_EXPIRED_TEMPLATE = 'my_app/verification_link_expired.html'
 
-# VERIFICATION_SUCCESS_TEMPLATE = "my_app/templates/my_app/verification_successful.html"
+REQUEST_NEW_EMAIL_TEMPLATE = "my_app/resend_email.html"
+NEW_EMAIL_SENT_TEMPLATE  = "my_app/new_mail_resent.html"
+
 # VERIFICATION_SUCCESS_TEMPLATE = os.path.join(BASE_DIR, "my_app/templates/my_app/verification_successful.html")
 # VERIFICATION_FAILED_TEMPLATE = os.path.join(BASE_DIR, "my_app/templates/my_app/verification_failed.html")
 # REQUEST_NEW_EMAIL_TEMPLATE = os.path.join(BASE_DIR, "my_app/templates/my_app/resend_email.html")

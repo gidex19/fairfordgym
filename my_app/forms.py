@@ -1,10 +1,17 @@
 from django import forms
 from django.contrib.auth.hashers import make_password
+# from bootstrap_datepicker_plus import DatePickerInput
+from bootstrap_datepicker_plus.widgets import DatePickerInput
 from .models import MyCustomuser
 
 
-hmolist = (('Axa Mansard', 'Axa Mansard'), ('Bastion Health', 'Bastion Health'), ('AFC Insurance', 'AFC Insurance'), ('XPS Insurance', 'XPS Insurance'))
+hmolist = ( ('No HMO Selected ', 'Select HMO'),('Axa Mansard', 'Axa Mansard'), ('Reliance', 'Reliance'), ('Avon', 'Avon'), ('Leadway', 'Leadway'), ('THT (Total health trust Ltd)', 'THT (Total health trust Ltd)'))
+mirwij_list = (('To Have Fun', 'To Have Fun'), ('To Keep Fit', 'To Keep Fit'), ('To Lose Weight', 'To Lose Weight'), ('To Meet New People', 'To Meet New People'), ('Recommended By Someone', 'Recommended By Someone'))
 
+class MyDateInput(forms.DateInput):
+    input_type = 'date'
+    # format = "dd/mm/yyyy",
+    
 
 class ContactForm(forms.Form):
     full_name = forms.CharField(
@@ -56,7 +63,33 @@ class ResendEmailForm(forms.Form):
         widget=forms.EmailInput(
             attrs={'placeholder': 'Email Address', 'class': 'form-control mb-4 rounded-0 p-3', 'id': 'inputemail'}),
         label="")
-    
+
+class ProfileForm(forms.ModelForm):
+     class Meta:
+         model = MyCustomuser
+         fields = ['address', 'date_of_birth', 'profile_pic', 'reason']
+
+
+# class ProfileForm(forms.Form):
+#     address =  forms.CharField(
+#         widget=forms.TextInput(attrs={
+#                                'placeholder': 'Address', 'class': 'form-control mb-4 rounded-0 p-3', 'id': 'inputaddress'}),
+#         label="")  
+#     # dob = forms.CharField(
+#     #     widget=forms.DateField(attrs = {
+#     #         'placeholder': 'Address', 'class': 'form-control mb-4 rounded-0 p-3', 'id': 'inputdob'
+#     #     }))
+#     # dob = forms.DateField(required=True, label='Date of Birth', label_suffix='DOb')
+#     dob = forms.DateField(widget=MyDateInput)
+#     profile_pic = forms.ImageField(
+#         label='Profile Picture',
+#         widget=forms.ClearableFileInput(
+#             attrs={
+#                 'class': 'form-control mb-2 rounded-0 p-3', 'id': 'profilepic'
+#             }
+#         )
+#     )
+#     mirwij = forms.ChoiceField(choices=mirwij_list, label='Most Important reason you joined') 
 
 class SearchUserForm(forms.Form):
     email = forms.CharField(

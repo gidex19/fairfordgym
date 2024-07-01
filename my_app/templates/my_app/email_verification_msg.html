@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    
+    <title>Fairford Gym | Email Verification</title>
+
+    <style>
+        .format-font {
+            font-family: 'Montserrat', sans-serif; 
+        }
+        .my-container {
+            margin: 10px;
+            padding: 10px;
+            padding-top: 0px;
+            justify-content: center;
+            border-radius: 5px;
+            border: 1px solid rgb(204, 203, 203);
+        }
+
+        .my-button {
+            padding: 10px;
+            padding-left: 35px;
+            padding-right: 35px;
+            background-color: orangered;
+            color: white;
+            /* border-radius: 25px; */
+            transition-duration: 500ms;
+            text-decoration: none;
+            
+        }
+        .my-button:hover {
+            color: orangered;
+            background-color: white;
+            border-radius: 0px;
+            border: 1px solid orangered;
+            transition-duration: 200ms;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="my-container">
+
+        <div style="background-color: orangered; border-radius: 3px;">
+            <h1 class="format-font" style="text-align: center; padding: 2px; color:white;">
+                Account Activation
+            </h1>
+        </div>
+
+        <h2 class="format-font" style="text-align: center;">E-mail Confirmation</h2> <hr style="background-color:  rgb(110, 3, 211); width:100px">
+
+        <div class="format-font" style="margin-top: 20px; line-height: 1.5;">
+            <p style="text-align: center; font-weight: bold;">Welcome to Fairford Gym...</p>
+            Your account was created successfully but we'll need to verify your email address.  
+            Please click on the link below to confirm the email and activate your account.       
+        </div>
+
+        <p class="format-font" style="text-align: center; margin-top: 50px;">
+            Please verify your e-mail :
+            <hr style="background-color: orangered; width:50px">
+            <div class="format-font" style="text-align: center; margin-top: 30px;" >
+                <a href="{{link}}" class="my-button" >Verify</a>
+            </div>
+            or copy the link {{link}}
+            
+        </p>
+    
+        <p class="format-font" style="margin-top: 50px;">
+           <b> You'll be joining us right after the verification !</b>
+        </p>
+    
+        <p class="format-font" style="line-height: 1.5;">
+            <b>Thanks for joining! <br> This mail is auto-generated.
+        </p>
+        
+    </div>
+   
+</body>
+</html>

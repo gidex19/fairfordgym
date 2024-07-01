@@ -1,17 +1,20 @@
 from django.shortcuts import render, redirect
-from .forms import ContactForm, LoginForm, RegisterForm, CorporateForm, ResendEmailForm, SearchUserForm
+from .forms import ContactForm, LoginForm, RegisterForm, CorporateForm, ResendEmailForm, SearchUserForm, ProfileForm
 from .models import MyCustomuser as Customuser, Payment, CorporateMemberRequest, ContactMessage
 from django.contrib.auth import authenticate, login, logout
 from datetime import datetime, timedelta
+from django.http.response import HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from verify_email.email_handler import send_verification_email
 from paystackapi.transaction import Transaction
 from django.urls import reverse_lazy
+from datetime import datetime
 from paystackapi.paystack import Paystack
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
+import pytz
 
 from django.contrib.auth.views import PasswordResetView
 from django.contrib.messages.views import SuccessMessageMixin
@@ -75,7 +78,7 @@ def loginpage(request):
                         request, 'Login successful')
                     #print('user has been logged in')
 
-                    return redirect('home')
+                    return redirect('dashboard')
                 elif custom_user is None:
                     print('message section')
                     messages.warning(
@@ -190,12 +193,86 @@ def contact(request):
     return render(request, 'my_app/contact.html', {'contact_form': contact_form})
 
 
+
+
 @login_required()
 def dashboard(request):
-    user = request.user
-    payments = Payment.objects.filter(user = user, paid = True, status = 'Active' )
     
-    context = {'user': user, "payments": payments}
+    user = request.user
+    payments = Payment.objects.filter(user = user, paid = True, status = 'Active' ).order_by("-id")
+    
+    current_date = datetime.now()
+    morning_class = ''
+    evening_class = ''
+    # zones = pytz.all_timezones
+
+    # print(zones)
+    LagosTz = pytz.timezone("Africa/Lagos") 
+    time_in_lagos = datetime.now(LagosTz)
+    # print(time_in_lagos.strftime("%d/%m/%Y, %H:%M:%S"))
+    current_day_in_lagos = time_in_lagos.strftime("%a") 
+    
+    print(current_day_in_lagos)
+    if current_day_in_lagos == 'Mon':
+        morning_class = 'Aerobics Blast'
+        evening_class = 'Combo Fit(HIIT)'
+    elif current_day_in_lagos == 'Tue':
+        morning_class = 'Combo Fit(HIIT)'
+        evening_class = 'Stepboard Workout'
+    elif current_day_in_lagos == 'Wed':
+        morning_class = 'Stepboard Workout'
+        evening_class = 'Strength Training'
+    elif current_day_in_lagos == 'Thur':
+        morning_class = 'Taebo'
+        evening_class = 'Yoga'        
+    elif current_day_in_lagos == 'Fri':
+        morning_class = 'Zumba'
+        evening_class = 'Zumba'
+    elif current_day_in_lagos == 'Sat':
+        morning_class = 'Full Body Workout'
+        evening_class = 'No Class'
+    elif current_day_in_lagos == 'Sun':
+        morning_class = 'Rest Day'
+        evening_class = 'Rest Day'
+    else:
+        morning_class = 'Loading...'
+        evening_class = 'Loading...'            
+    
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        print("Ajax scope just ran through") 
+        if user.profile_filled == False:
+            return JsonResponse({'status':'unfilled profile'})
+        else:
+            return JsonResponse({'status': 'filled profile'})
+    else:
+        print("not an ajax call")    
+    
+    if request.method =='POST':
+        profile_form = ProfileForm(request.POST, request.FILES)
+        if profile_form.is_valid():
+            address =  profile_form.cleaned_data.get('address')
+            dob = profile_form.cleaned_data.get('date_of_birth')
+            mirwij = profile_form.cleaned_data.get('reason')
+            profile_pic = profile_form.cleaned_data.get('profile_pic')
+            # address =  profile_form.cleaned_data.get('address')
+            # dob = profile_form.cleaned_data.get('dob')
+            # mirwij = profile_form.cleaned_data.get('mirwij')
+            # profile_pic = profile_form.cleaned_data.get('profile_pic')
+            print(address)
+            print(dob)
+            print(mirwij)
+            print(profile_pic)
+            Customuser.objects.filter(email = user.email).update(profile_filled = True)
+            # form.save()
+            profile_form.save()
+            print("user profile updated!!!")
+            messages.success(request, "Profile Updated Successfully")
+            
+    else:
+        profile_form = ProfileForm()
+    
+    context = {"user": user,  "profile_form": profile_form, "payments": payments, "morning_class": morning_class , 
+               "evening_class": evening_class }
     return render(request, 'my_app/dashboard.html', context)
 
 
@@ -435,3 +512,7 @@ def resend_email(request):
     else:
         form = ResendEmailForm()  
     return render(request, 'my_app/resend_email.html', {'form': form})
+
+def privacy_policy(request):
+    return render(request, "my_app/privacy_policy.html")
+
